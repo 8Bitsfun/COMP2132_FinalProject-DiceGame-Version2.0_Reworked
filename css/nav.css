@@ -1,3 +1,5 @@
+
+/* Defines flex ratios ----------------------------------------------------------*/
 header {
     /* This targets the direct all the direct child elements, which
        includes: .logo, .nav-container, and .search-container.
@@ -7,14 +9,59 @@ header {
          container. However it needs to be adjusted to fit
          with a specified ratio.
          */
-    display: flex;
+    display: flex; /* Applies flex to header, later used to set flex width ratios. */
+    gap: 10px;
 }
 
+/*
+header > * { Selects the direct child elements in the header.
+    flex: 1;
+} */
+
+.logo {
+    flex: 1; /* Sets flex ratio between logo, nav, and search containers. */
+    border: 1px solid black;
+}
+
+.nav-container {
+    border: 1px solid black;
+    display: flex; /* Vertically centers the container to fit parent container.*/
+    flex-direction: column;
+    flex: 9;
+}
+
+.nav {
+    display: flex;
+    /* After adding the searchbar, the navbar remained at the top of its container.
+       - It needed to be centered vertically and stretched horizontally to fill
+         empty space, hence the justify-content and align-items properties set.
+       - This and with the addition of apply flex to the container. */
+    justify-content: space-between;
+    align-items: center;
+    /* After applying the gap property for the header the flex width ratio
+       disappeared, the flex: 1 fixed this issue.
+       - New problem, now the li and anchors are not vertically centered or
+         horizontally stretched to fit its container.*/
+    flex: 1;
+
+}
+
+.search-container {
+    /*border: 1px solid black;*/ /* Was causing vertical anomaly with nav links. */
+    flex: 2; /* Vertically centers the container to fit parent container.*/
+}
+/* Defines flex ratios ----------------------------------------------------------*/
+
+
+
+
+/* Defines styles and positioning of Navbar Links -------------------------------*/
 .nav ul {
     /* This targets the ul to make it display in a row rather than in
        column, to visually display the links horizontally across the page.
        */
     display: flex;
+    flex: 1;
     flex-direction: row;
     gap: 10px;
 }
@@ -26,3 +73,35 @@ header {
     flex: 1;
     justify-content: center;
 }
+/* Defines styles and positioning of Navbar Links -------------------------------*/
+
+/* Defines styles and positioning of Searchbar and Links ------------------------*/
+.search-container .nav {
+    margin-bottom: 10px;
+}
+
+.search-bar {
+    display: flex;
+}
+
+.search-bar input {
+    flex: 1;
+}
+
+.fa-search {
+    align-items: center;
+    border: 1px solid blue;
+    display: flex;
+    justify-content: center;
+}
+
+/* Remove focus outline and border highlight */
+input[type="search"]:focus,
+input[type="text"]:focus {
+    outline: none;       /* Removes the default outline */
+    box-shadow: none;    /* Removes glow in some browsers */
+}
+/* Defines styles and positioning of Searchbar and Links ------------------------*/
+
+
+
