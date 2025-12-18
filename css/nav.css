@@ -1,0 +1,28 @@
+header {
+    /* This targets the direct all the direct child elements, which
+       includes: .logo, .nav-container, and .search-container.
+       - display: flex is applied to style the child elements
+         to fit its container.
+       - This equally distributes each child's with to fit its
+         container. However it needs to be adjusted to fit
+         with a specified ratio.
+         */
+    display: flex;
+}
+
+.nav ul {
+    /* This targets the ul to make it display in a row rather than in
+       column, to visually display the links horizontally across the page.
+       */
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.nav ul li {
+    /**/
+    align-items: center;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}

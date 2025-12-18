@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.sticky-container {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.sticky-content {
+    flex: 1;
+}
+
+body {
+    margin: 0 auto;
+    width: 90%;
+}
+
+header {
+    border: 1px solid blue;
+}
+
+main {
+    border: 1px solid red;
+}
+
+footer {
+    border: 1px solid black;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    border: 1px solid green;
+}
+
+a {
+    text-decoration: none;
+    border: 1px solid red;
+}
+
