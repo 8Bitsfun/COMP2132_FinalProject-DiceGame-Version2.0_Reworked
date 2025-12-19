@@ -21,6 +21,9 @@ header > * { Selects the direct child elements in the header.
 .logo {
     flex: 1; /* Sets flex ratio between logo, nav, and search containers. */
     border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav-container {

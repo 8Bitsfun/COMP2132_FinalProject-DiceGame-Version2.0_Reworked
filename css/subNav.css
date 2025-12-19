@@ -1,9 +1,9 @@
-.subNav_1 {
+.subNav_1, .subNav_2 {
     border: 1px solid blue;
     display: flex;
 }
 
-.subNav_1 > div {
+.subNav_1 > div, .subNav_2 > div {
     flex: 1;
 }
 
