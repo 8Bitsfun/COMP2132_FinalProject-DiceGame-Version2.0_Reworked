@@ -1,0 +1,9 @@
+.subNav_1 {
+    border: 1px solid blue;
+    display: flex;
+}
+
+.subNav_1 > div {
+    flex: 1;
+}
+
