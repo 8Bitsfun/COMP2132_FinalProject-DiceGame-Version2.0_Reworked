@@ -1,9 +1,22 @@
-.subNav_1, .subNav_2 {
+.subNav_1, .subNav_2, .subNav_3 {
     border: 1px solid blue;
     display: flex;
 }
 
-.subNav_1 > div, .subNav_2 > div {
+.subNav_1 > div, .subNav_2 > div, .subNav_3 > div {
     flex: 1;
 }
 
+.col_4 ul {
+    border: 1px solid black;
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+}
+
+.subNav_3 .col_4 img {
+    display: flex;
+    width: 100%;
+    border: 1px solid red;
+
+}
