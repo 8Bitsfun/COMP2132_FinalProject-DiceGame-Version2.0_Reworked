@@ -107,4 +107,6 @@ input[type="text"]:focus {
 /* Defines styles and positioning of Searchbar and Links ------------------------*/
 
 
-
+.active-navLink {
+    background-color: #F1F3E0;
+}

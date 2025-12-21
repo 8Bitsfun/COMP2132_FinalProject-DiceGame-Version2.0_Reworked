@@ -46,3 +46,12 @@ a {
     border: 1px solid red;
 }
 
+a:hover {
+    background-color: #FFF8DE;
+}
+
+a:active {
+    background-color: #AAC4F5;
+}
+
+
