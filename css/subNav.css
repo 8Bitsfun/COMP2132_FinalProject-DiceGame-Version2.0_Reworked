@@ -30,3 +30,79 @@
 .active-subNavLink {
     border: 2px solid green;
 }
+
+/* ------------------------------------------------------------------------------- */
+/* - Originally had it styled with these settings.
+   - I wanted the .subNav to take the entire body's width to fill the screen, however,
+     it did not display correctly as I hope it would.
+   - Since the .subNav's position is in relation to its parent container, .nav,
+     setting its width to 100% only matches the width of the .nav container, rather
+     than the desired width of html body.
+
+.nav-container {
+   position: relative;
+}
+
+.subNav {
+    position: absolute;
+    top: 80px;
+    width: 100%;
+}*/
+
+/*
+.nav-container {
+    position: relative;
+}
+
+   In this version, I tried to set the left and right properties to get the .subNav
+   container to stretch past the parent .nav container to fit the width of the body
+   rather than .nav itself.
+   - The issue with using this method is when the browser changes sizes or if
+     the resolution of the monitor changes it will not accommodate such event
+     and a such incorrectly displaying the .subNav.
+.subNav {
+    left: -100px;
+    right: -100px;
+    position: absolute;
+    top: 80px;
+
+}*/
+
+
+/*header {*/
+/*    position: relative;*/
+/*}*/
+
+/*!* In this version, I set the header to relative instead of .nav this solved the*/
+/*   issues mentioned previously.*/
+/*   - An unexpected behavior occurred where the .subNav overflows out of the*/
+/*     html body, even when the body is set to min-height: 100vh.*/
+/*   - I am not sure why it is doing that, given that it should stretch to fill*/
+/*     and prevent overflow-y.*/
+/*   *!*/
+/*.subNav {*/
+/*    left: 0;*/
+/*    margin: 0 auto;*/
+/*    !*position: absolute;*!*/
+/*    position: fixed;*/
+/*    right: 0;*/
+/*    top: 80px;*/
+/*    width: 90%;*/
+/*    z-index: 99;*/
+/*}*/
+
+.subNav_1, .subNav_2 {
+    padding: 0 10% 0 10%;
+}
+
+.subNav_3 {
+    padding: 0 18% 0 18%;
+}
+
+.subNav_1, .subNav_2 {
+    display: none;
+}
+
+
+
+/* ------------------------------------------------------------------------------- */

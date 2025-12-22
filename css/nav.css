@@ -91,6 +91,11 @@ header > * { Selects the direct child elements in the header.
     flex: 1;
 }
 
+/* Centers the image within its container
+   - To do this I had to apply display: flex to the container
+     otherwise image's default display property: inline  will not allow
+     it to adjust vertically.
+     */
 .fa-search {
     align-items: center;
     border: 1px solid blue;
