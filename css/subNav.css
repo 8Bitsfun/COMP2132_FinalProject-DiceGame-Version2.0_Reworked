@@ -13,14 +13,6 @@
     margin-bottom: 10px;
 }
 
-
-/*.col_4 ul {*/
-/*    border: 1px solid black;*/
-/*    !*display: flex;*!*/
-/*    !*justify-content: center;*!*/
-/*    !*align-items: center;*!*/
-/*}*/
-
 .subNav_3 .col_4 img {
     display: flex;
     width: 100%;
@@ -29,4 +21,24 @@
 
 .active-subNavLink {
     border: 2px solid green;
+}
+
+/* Center fixed container within viewport bounds */
+.subNav {
+    left: 0;
+    right: 0;
+    margin: 0 auto; /* Fixed positioning avoids overlay issues seen with relative/absolute */
+    position: fixed; /* Position subNav directly below header */
+    top: 80px; /* Align width with main content */
+    width: 90%;
+    z-index: 99;
+}
+
+.subNav_1, .subNav_2 {
+    display: none;
+    padding: 0 10% 0 10%;
+}
+
+.subNav_3 {
+    padding: 0 18% 0 18%;
 }
