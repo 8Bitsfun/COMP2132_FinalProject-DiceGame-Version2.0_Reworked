@@ -49,6 +49,8 @@ a {
 
 a:hover {
     background-color: #FFF8DE;
+    /*background-color: lightgrey;*/
+    /*border: 2px solid lightsalmon;*/
 }
 
 a:active {
