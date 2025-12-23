@@ -1,22 +1,9 @@
 
 /* Defines flex ratios ----------------------------------------------------------*/
 header {
-    /* This targets the direct all the direct child elements, which
-       includes: .logo, .nav-container, and .search-container.
-       - display: flex is applied to style the child elements
-         to fit its container.
-       - This equally distributes each child's with to fit its
-         container. However it needs to be adjusted to fit
-         with a specified ratio.
-         */
     display: flex; /* Applies flex to header, later used to set flex width ratios. */
     gap: 10px;
 }
-
-/*
-header > * { Selects the direct child elements in the header.
-    flex: 1;
-} */
 
 .logo {
     flex: 1; /* Sets flex ratio between logo, nav, and search containers. */
@@ -35,28 +22,16 @@ header > * { Selects the direct child elements in the header.
 
 .nav {
     display: flex;
-    /* After adding the searchbar, the navbar remained at the top of its container.
-       - It needed to be centered vertically and stretched horizontally to fill
-         empty space, hence the justify-content and align-items properties set.
-       - This and with the addition of apply flex to the container. */
     justify-content: space-between;
     align-items: center;
-    /* After applying the gap property for the header the flex width ratio
-       disappeared, the flex: 1 fixed this issue.
-       - New problem, now the li and anchors are not vertically centered or
-         horizontally stretched to fit its container.*/
     flex: 1;
 
 }
 
 .search-container {
-    /*border: 1px solid black;*/ /* Was causing vertical anomaly with nav links. */
     flex: 2; /* Vertically centers the container to fit parent container.*/
 }
 /* Defines flex ratios ----------------------------------------------------------*/
-
-
-
 
 /* Defines styles and positioning of Navbar Links -------------------------------*/
 .nav ul {
@@ -106,7 +81,8 @@ input[type="text"]:focus {
 }
 /* Defines styles and positioning of Searchbar and Links ------------------------*/
 
-
-.active-navLink {
-    background-color: #F1F3E0;
+.active-navLink, .active-overlay {
+    /*background-color: #F1F3E0;*/
+    border: 2px solid lightsalmon;
 }
+

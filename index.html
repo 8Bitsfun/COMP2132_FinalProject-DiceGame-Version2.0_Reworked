@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/subNav.css">
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script type="module" src="js/test_debug.js" defer></script>
+<!--    <script type="module" src="js/test_debug.js" defer></script>-->
     <script src="js/subNav.js" defer></script>
 
     <title>Comp 2132: Final Project V2.00</title>
@@ -23,9 +23,9 @@
         <nav class="nav-container">
             <div class="nav">
                 <ul>
-                    <li><a href="#" class="active-navLink">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                    <li><a href="#">Link 3</a></li>
+                    <li><a data-index="0" href="#" class="active-navLink">Link 1</a></li>
+                    <li><a data-index="1" href="#">Link 2</a></li>
+                    <li><a data-index="2" href="#">Link 3</a></li>
                     <li><a href="#">Link 4</a></li>
                     <li><a href="#">Link 5</a></li>
                     <li><a href="#">Link 6</a></li>
@@ -36,7 +36,7 @@
                     <li><a href="#">Link 11</a></li>
                 </ul>
             </div>
-            <div class="subNav_1 subNav">
+            <div class="subNav_1 subNav" data-index="0">
                 <div class="column col_1">
                     <ul id="new-arrivals">
                         <li><a href="#">New Arrivals</a></li>
@@ -103,7 +103,7 @@
                 </div>
             </div>
 
-            <div class="subNav_2 subNav">
+            <div class="subNav_2 subNav" data-index="1">
                 <div class="column col_1">
                     <ul id="new-now">
                         <li><a href="#">New & Now</a></li>
@@ -181,7 +181,7 @@
                 </div>
             </div>
 
-            <div class="subNav_3 subNav">
+            <div class="subNav_3 subNav" data-index="2">
                 <div class="column col_1">
                     <ul class="deals">
                         <li><a href="#">Deals & Steals</a></li>

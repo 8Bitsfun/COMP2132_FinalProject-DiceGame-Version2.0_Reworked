@@ -25,6 +25,7 @@
 
 /* Center fixed container within viewport bounds */
 .subNav {
+    display: none;
     left: 0;
     right: 0;
     margin: 0 auto; /* Fixed positioning avoids overlay issues seen with relative/absolute */
