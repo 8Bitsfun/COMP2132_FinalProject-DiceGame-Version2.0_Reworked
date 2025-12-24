@@ -1,0 +1,34 @@
+.search-bar {
+    position: relative;
+}
+
+.trending-searches {
+    border: 1px solid green;
+    /*display: flex;*/
+    display: none;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 5px;
+    position: absolute;
+    right: 0;
+    top: 20px;
+    width: 250px;
+}
+
+.trending-searches h3 {
+    font-weight: lighter;
+}
+
+/* If I remove either display: block here and/or display: flex in its parent container,
+   .trending-searches, the anchors overflows out of the container, but reverse happens
+   if either display property is set.
+   - It overflows because its height is taller than its parent container given the
+     addition of the anchor's padding.
+   SIDE NOTE:
+   - The only issue I have with setting it to 'block' is that the anchors will display
+     and stack in a column formation, rather than row.*/
+.trending-searches a {
+    border: 1px solid green;
+    /*display: block;*/
+    padding: 5px;
+}

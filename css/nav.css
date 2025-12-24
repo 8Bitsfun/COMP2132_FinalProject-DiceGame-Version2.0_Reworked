@@ -30,6 +30,7 @@ header {
 
 .search-container {
     flex: 2; /* Vertically centers the container to fit parent container.*/
+    max-width: 193px;
 }
 /* Defines flex ratios ----------------------------------------------------------*/
 
