@@ -1,0 +1,110 @@
+@media (max-width: 1107px) {
+
+    /* Removing all three divs puts the element within each in line with rest of the .nav anchors.
+       - Initially wanted to remove the each divs content out of parents as a way to display, the
+         anchors visually uniformly.
+    .nav-container {
+        display: contents;
+    }
+
+    #search-nav {
+        display: contents;
+    }
+
+    .search-container {
+        display: contents;
+    }
+
+    .logo {
+        flex: 0;
+    }
+
+    .nav {
+        flex: 4;
+    }
+    */
+
+    header {
+        flex-direction: column;
+        height: 100%;
+        position: absolute;
+        width: 70%;
+    }
+
+    /*#top-nav {*/
+    /*    flex: 0;*/ /* No effect on cross-axis where flex-direction is column. */
+    /*}*/
+
+    #top-nav ul {
+        flex-direction: column;
+    }
+
+    #top-nav ul li {
+        justify-content: flex-start;
+        /*padding-left: 20px;*/
+    }
+
+    #top-nav ul li a {
+        width: 100%;
+        padding-left: 20px
+    }
+
+    .search-container {
+        /** flex: 0; */ /** No effect on cross-axis where flex-direction is column. */
+    }
+
+    .search-bar {
+        display: none; /* Temporary hidden. */
+        position: absolute; /* Removes the search input to put the anchors in line with .nav anchors. */
+        top: 150px;
+    }
+
+    #search-nav  {
+        margin: 5px;  /* Vertically pushes the anchors to the center. */
+    }
+
+    #search-nav ul {
+        flex-direction: column;
+    }
+
+    #search-nav ul li {
+        justify-content: flex-start;
+        margin: -5px; /* ~!IMPORTANT: Not sure where else in code is affecting margin. */
+    }
+
+    /* Had to manually add margins to the second list item to match #top-nav anchors. */
+    #search-nav ul li:nth-child(2) {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    #search-nav ul li a {
+        width: 100%;
+        padding-left: 20px;
+    }
+
+    /*
+    #top-nav {
+        order: 3;
+    }
+
+    .nav-container {
+        order: 1;
+    }
+
+    .logo {
+        order: 0;
+    } */
+
+}
+
+@media (min-width: 1108px) {
+    .search-container {
+        flex: 2; /* Vertically centers the container to fit parent container.*/
+        max-width: 193px;   /** Commented out, conflict with media query mobile menu. */
+    }
+
+    .nav-container {
+        flex: 9;  /** Commented out, conflicts with media query. */
+    }
+}

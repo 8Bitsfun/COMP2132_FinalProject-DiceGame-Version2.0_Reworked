@@ -6,7 +6,7 @@ header {
 }
 
 .logo {
-    flex: 1; /* Sets flex ratio between logo, nav, and search containers. */
+    /*flex: 1; !* Sets flex ratio between logo, nav, and search containers. *!*/ /* Commented out, conflicts with media query. */
     border: 1px solid black;
     display: flex;
     justify-content: center;
@@ -17,7 +17,7 @@ header {
     border: 1px solid black;
     display: flex; /* Vertically centers the container to fit parent container.*/
     flex-direction: column;
-    flex: 9;
+    /*flex: 9;*/ /* Commented out, conflicts with media query. */
 }
 
 .nav {
@@ -29,8 +29,8 @@ header {
 }
 
 .search-container {
-    flex: 2; /* Vertically centers the container to fit parent container.*/
-    max-width: 193px;
+    /*flex: 2; !* Vertically centers the container to fit parent container.*!*/
+    /* max-width: 193px; */ /* Commented out, conflict with media query mobile menu. */
 }
 /* Defines flex ratios ----------------------------------------------------------*/
 
@@ -52,6 +52,12 @@ header {
     flex: 1;
     justify-content: center;
 }
+
+/* Applies responsiveness to font as pages change in size. */
+.nav a {
+    font-size: clamp(14px, 0.95vw, 17px);
+}
+
 /* Defines styles and positioning of Navbar Links -------------------------------*/
 
 /* Defines styles and positioning of Searchbar and Links ------------------------*/
@@ -91,3 +97,6 @@ input[type="text"]:focus {
     border: 2px solid lightsalmon;
 }
 
+/* Media Queries ----------------------------------------------------------------*/
+
+/* Media Queries ----------------------------------------------------------------*/

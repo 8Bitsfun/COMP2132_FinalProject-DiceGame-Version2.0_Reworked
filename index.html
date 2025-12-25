@@ -11,19 +11,22 @@
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/subNav.css">
     <link rel="stylesheet" href="css/search-bar.css">
+    <link rel="stylesheet" href="css/responsive-header.css">
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <!--    <script type="module" src="js/test_debug.js" defer></script>-->
     <script src="js/subNav.js" defer></script>
     <script src="js/search-bar.js" defer></script>
 
+
     <title>Comp 2132: Final Project V2.00</title>
 </head>
 <body class="sticky-container">
+
     <header>
         <div class="logo">LOGO</div>
         <nav class="nav-container">
-            <div class="nav">
+            <div class="nav" id="top-nav">
                 <ul>
                     <li><a data-index="0" href="#" class="active-navLink">Link 1</a></li>
                     <li><a data-index="1" href="#">Link 2</a></li>
@@ -260,13 +263,12 @@
                         <li><img src="https://placehold.co/170x275" alt=""></li>
                         <li><a href="#">Link 54</a></li>
                     </ul>
-
                 </div>
             </div>
         </nav>
         <div class="search-container">
             <div class="nav-container">
-                <div class="nav">
+                <div class="nav" id="search-nav">
                     <ul>
                         <li><a href="#">Link 1</a></li>
                         <li><a href="#">Link 2</a></li>

@@ -1,4 +1,7 @@
 
+// Sets focus and a click event for search-bar input to toggle .trending-searches div.
+// Closes when focus is blurred or out of focus and clicked outside of input.
+// - Close the element when focus is lost or when clicking outside the input.
 $(function () {
     const $searchBar = $('.search-bar');
     const $input     = $('.search-bar input');
