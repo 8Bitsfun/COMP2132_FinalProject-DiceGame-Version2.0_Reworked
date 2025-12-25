@@ -1,33 +1,47 @@
 let navLinks = $('.nav a');
 // let subNavs = $('.subNav a'); /* Does not work as a global variable. */
 let subNavs = $('.subNav a');
+let _header = $('header');
 
-navLinks.on('click', function (e) {
-    e.preventDefault(); // remove if you want normal navigation
-    $('.nav a').removeClass('active-navLink'); // remove active-navLink from all links
-    $('.subNav a').removeClass('active-subNavLink');
-    $(this).addClass('active-navLink'); // set active-navLink on clicked link
+let DESKTOP_BREAKPOINT = 1107;
 
-});
+function displayDesktopSubNav() {
+    resetSubNavState();
+    if (window.innerWidth < DESKTOP_BREAKPOINT) return;
 
-subNavs.on('click', function (e) {
-    e.preventDefault();
-    $('.subNav a').removeClass('active-subNavLink');
-    $(this).addClass('active-subNavLink');
-});
+    // Clear previous desktop bindings (important!)
+    navLinks.off('.desktop');
+    subNavs.off('.desktop');
+    _header.off('.desktop');
 
-let index;
-navLinks.on( {
-    mouseenter: function (e) {
+
+    navLinks.on('click.desktop', function (e) {
+        e.preventDefault(); // remove if you want normal navigation
+        $('.nav a').removeClass('active-navLink'); // remove active-navLink from all links
+        $('.subNav a').removeClass('active-subNavLink');
+        $(this).addClass('active-navLink'); // set active-navLink on clicked link
+
+    });
+
+
+    subNavs.on('click.desktop', function (e) {
         e.preventDefault();
-        index = navLinks.index(this) + 1;
-        navLinks.removeClass('active-overlay'); // Adds active class to navLink to indicate current active overlay.
-        $('.subNav').hide();
-        $(`.subNav_${index}`).css('display', 'flex');
-        // Highlights the active top navLink.
-        $(this).addClass('active-overlay');
-    }
-});
+        $('.subNav a').removeClass('active-subNavLink');
+        $(this).addClass('active-subNavLink');
+    });
+
+    let index;
+    navLinks.on( {
+        'mouseenter.desktop': function (e) {
+            e.preventDefault();
+            index = navLinks.index(this) + 1;
+            navLinks.removeClass('active-overlay'); // Adds active class to navLink to indicate current active overlay.
+            $('.subNav').hide();
+            $(`.subNav_${index}`).css('display', 'flex');
+            // Highlights the active top navLink.
+            $(this).addClass('active-overlay');
+        }
+    });
 
 // UPDATE 1: TYPO!!!
 // - See below for comments.
@@ -55,20 +69,35 @@ navLinks.on( {
 //     });
 // });
 
-subNavs.on('click', function() {
-    // - Finds the closest ancestor and assign its data-index value to variable.
-    // - This value coincidentally corresponds to the index value of the navLinks,
-    //   therefore it is sued to toggle the .active-navLink styles.
-    let i = $(this).closest('.subNav').data('index');
-    navLinks.removeClass('active-navLink'); // Removes any active navLinks.
-    // Also highlights active navLink when any of the anchor links are clicked within
-    // the active overlay div.
-    $(navLinks[i]).addClass('active-navLink');
+    subNavs.on('click.desktop', function() {
+        // - Finds the closest ancestor and assign its data-index value to variable.
+        // - This value coincidentally corresponds to the index value of the navLinks,
+        //   therefore it is sued to toggle the .active-navLink styles.
+        let i = $(this).closest('.subNav').data('index');
+        navLinks.removeClass('active-navLink'); // Removes any active navLinks.
+        // Also highlights active navLink when any of the anchor links are clicked within
+        // the active overlay div.
+        $(navLinks[i]).addClass('active-navLink');
+    });
+
+    _header.on('mouseleave.desktop', function (e) {
+        e.preventDefault();
+        $('.subNav').css('display', 'none');
+        navLinks.removeClass('active-overlay'); // Removes active overlay on navLink on mouseleave.
+    })
+
+}
+
+function resetSubNavState() {
+    // Hide everything
+    $('.subNav').hide();
+    navLinks.removeClass('active-overlay active-navLink');
+    $('.subNav a').removeClass('active-subNavLink');
+
+    // Remove all previous event handlers
+    navLinks.off('.desktop').off('.mobile');
+}
+
+$(window).on('load resize', function () {
+    displayDesktopSubNav();
 });
-
-$('header').on('mouseleave', function (e) {
-    e.preventDefault();
-    $('.subNav').css('display', 'none');
-    navLinks.removeClass('active-overlay'); // Removes active overlay on navLink on mouseleave.
-})
-
