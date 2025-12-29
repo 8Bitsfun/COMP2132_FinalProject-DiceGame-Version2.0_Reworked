@@ -1,0 +1,50 @@
+In jQuery, there are multiple ways to select an <li> element without using .closest().
+Here are the most common and effective alternatives:
+
+1. Direct CSS Selector
+If you know the class, ID, or attribute of the <li>:
+Javascript// By class
+$("li.my-class")
+
+// By ID
+$("li#my-id")
+
+// By attribute
+$("li[data-type='special']")
+
+
+2. Using .find()
+If you start from a parent element and want to get <li> children:
+Javascript$("#my-list").find("li") // All li inside #my-list
+
+
+3. Using .filter()
+If you already have a set of elements and want only <li>:
+Javascript$("ul *").filter("li") // Filters only li elements
+
+
+4. Using .siblings()
+If you have a reference to one <li> and want others in the same list:
+Javascript$(".active").siblings("li") // All li siblings of .active
+
+
+5. Using .parent() + .children()
+If you have a child element inside <li>:
+Javascript$(".child-element").parent("li") // Direct parent li
+// Or get all li from the parent ul
+$(".child-element").parent().children("li")
+
+
+6. Using .prev() / .next()
+If you want the <li> before or after a known one:
+Javascript$(".active").prev("li") // Previous li
+$(".active").next("li") // Next li
+
+
+✅ Tip:
+If you want the nearest <li> but don’t want .closest(), .parents("li").first() is a good alternative:
+Javascript$(".child-element").parents("li").first()
+
+
+If you want, I can give you a performance comparison of these methods so you know which is fastest for large lists.
+Do you want me to prepare that?

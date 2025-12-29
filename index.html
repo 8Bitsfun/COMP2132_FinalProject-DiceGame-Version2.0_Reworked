@@ -7,16 +7,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/subNav.css">
     <link rel="stylesheet" href="css/search-bar.css">
     <link rel="stylesheet" href="css/responsive-header.css">
 
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <!--    <script type="module" src="js/test_debug.js" defer></script>-->
-    <script src="js/subNav.js" defer></script>
-    <script src="js/search-bar.js" defer></script>
+<!--    <script src="js/subNav.js" defer></script>-->
+<!--    <script src="js/search-bar.js" defer></script>-->
+    <script src="js/responsive-header.js" defer></script>
 
 
     <title>Comp 2132: Final Project V2.00</title>
@@ -27,7 +30,12 @@
         <nav class="nav-container">
             <div class="nav" id="top-nav">
                 <ul>
-                    <li><a data-index="0" href="#" class="active-navLink">Link 1</a></li>
+                    <!--
+                        References:
+                        1. https://www.geeksforgeeks.org/html/html-data-attributes/
+                        2. https://developer.mozilla.org/en-US/docs/Web/HTML/How_to/Use_data_attributes
+                        -->
+                    <li><a data-index="0" href="#">Link 1</a></li>
                     <li><a data-index="1" href="#">Link 2</a></li>
                     <li><a data-index="2" href="#">Link 3</a></li>
                     <li><a href="#">Link 4</a></li>
@@ -39,22 +47,32 @@
                     <li><a href="#">Link 10</a></li>
                 </ul>
             </div>
+
             <div class="subNav_1 subNav" data-index="0">
                 <div class="column col_1">
                     <ul id="new-arrivals">
-                        <li><a href="#">New Arrivals</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 3</a></li>
+                        <li>
+                            <a href="#">New Arrivals</a>
+                            <i class="chevron fas fa-chevron-down"></i>
+                        </li>
+                        <li><a href="#" class="subNav-item">Link 2</a></li>
+                        <li><a href="#" class="subNav-item">Link 3</a></li>
                     </ul>
                     <ul id="best-sellers">
-                        <li><a href="#">Best Sellers</a></li>
+                        <li>
+                            <a href="#">Best Sellers</a>
+                            <i class="chevron fas fa-chevron-down"></i>
+                        </li>
                         <li><a href="#">Link 5</a></li>
                         <li><a href="#">Link 6</a></li>
                     </ul>
                 </div>
                 <div class="column col_2">
                     <ul id="shop-by-occasions">
-                        <li><a href="#">Shop By Occasions</a></li>
+                        <li>
+                            <a href="#">Shop By Occasions</a>
+                            <i class="chevron fas fa-chevron-down"></i>
+                        </li>
                         <li><a href="#">Link 8</a></li>
                         <li><a href="#">Link 9</a></li>
                         <li><a href="#">Link 10</a></li>
@@ -64,13 +82,19 @@
                 </div>
                 <div class="column col_3">
                     <ul id="shop-by-trend">
-                        <li><a href="#">Shop By Trend</a></li>
+                        <li>
+                            <a href="#">Shop By Trend</a>
+                            <i class="chevron fas fa-chevron-down"></i>
+                        </li>
                         <li><a href="#">Link 14</a></li>
                         <li><a href="#">Link 15</a></li>
                         <li><a href="#">Link 16</a></li>
                     </ul>
                     <ul id="as-seen-on-socials">
-                        <li><a href="#">As Seen On Socials </a></li>
+                        <li>
+                            <a href="#">As Seen On Socials</a>
+                            <i class="chevron fas fa-chevron-down"></i>
+                        </li>
                         <li><a href="#">Link 18</a></li>
                         <li><a href="#">Link 19</a></li>
                         <li><a href="#">Link 20</a></li>
@@ -81,20 +105,26 @@
                 </div>
                 <div class="column col_4">
                     <ul id="old-navyX">
-                        <li><a href="#">Old NavyX</a></li>
+                        <li>
+                            <a href="#">Old NavyX</a>
+                            <i class="chevron fas fa-chevron-down"></i>
+                        </li>
                         <li><a href="#">Link 25</a></li>
                         <li><a href="#">Link 26</a></li>
                         <li><a href="#">Link 27</a></li>
                         <li><a href="#">Link 28</a></li>
                     </ul>
                     <ul id="the-fan-shop">
-                        <li><a href="#">The Fan Shop</a></li>
+                        <li><a href="#">The Fan Shop</a><i class="chevron fas fa-chevron-down"></i></li>
                         <li><a href="#">Link 30</a></li>
                     </ul>
                 </div>
                 <div class="column col_5">
                     <ul id="gifts-for-family">
-                        <li><a href="#">Gifts for the Family</a></li>
+                        <li>
+                            <a href="#">Gifts for the Family</a>
+                            <i class="chevron fas fa-chevron-down"></i>
+                        </li>
                         <li><a href="#">Link 32</a></li>
                         <li><a href="#">Link 33</a></li>
                         <li><a href="#">Link 34</a></li>

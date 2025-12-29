@@ -31,9 +31,24 @@
         width: 70%;
     }
 
+    .nav-container {
+        order: 2;
+    }
+
+    .search-container {
+        order: 1;
+    }
+
+
     /*#top-nav {*/
     /*    flex: 0;*/ /* No effect on cross-axis where flex-direction is column. */
     /*}*/
+
+    /* top-nav styles and reset for mobile view port ----------------------------------------------------------- */
+    #top-nav {
+        border: 1px solid green;
+        margin-bottom: 20px;
+    }
 
     #top-nav ul {
         flex-direction: column;
@@ -45,57 +60,125 @@
     }
 
     #top-nav ul li a {
-        width: 100%;
-        padding-left: 20px
-    }
-
-    .search-container {
-        /** flex: 0; */ /** No effect on cross-axis where flex-direction is column. */
-    }
-
-    .search-bar {
-        display: none; /* Temporary hidden. */
-        position: absolute; /* Removes the search input to put the anchors in line with .nav anchors. */
-        top: 150px;
-    }
-
-    #search-nav  {
-        margin: 5px;  /* Vertically pushes the anchors to the center. */
-    }
-
-    #search-nav ul {
-        flex-direction: column;
-    }
-
-    #search-nav ul li {
-        justify-content: flex-start;
-        margin: -5px; /* ~!IMPORTANT: Not sure where else in code is affecting margin. */
-    }
-
-    /* Had to manually add margins to the second list item to match #top-nav anchors. */
-    #search-nav ul li:nth-child(2) {
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-
-    #search-nav ul li a {
-        width: 100%;
+        font-size: 1em; /* Had to explicitly set font-size to match that of sub-nav anchors. */
         padding-left: 20px;
+        width: 100%;
+
+
     }
+    /* top-nav styles and reset for mobile view port ----------------------------------------------------------- */
+
+    /*.search-container {*/
+    /*    !** flex: 0; *! !** No effect on cross-axis where flex-direction is column. *!*/
+    /*}*/
+
+    /*.search-bar {*/
+    /*    display: none; !* Temporary hidden. *!*/
+    /*    position: absolute; !* Removes the search input to put the anchors in line with .nav anchors. *!*/
+    /*    !*top: 150px;*!*/
+    /*}*/
 
     /*
-    #top-nav {
-        order: 3;
+  #top-nav {
+      order: 3;
+  }
+
+  .nav-container {
+      order: 1;
+  }
+
+  .logo {
+      order: 0;
+  } */
+
+    /* subNav styles and reset for mobile view port ------------------------------------------------------------ */
+    /* Resets subNavs to for mobile viewport. */
+    .subNav {
+        display: flex; /* Unhides subNav. */
+        flex-direction: column;
+        gap: 0;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        top: 0;
+        width: 100%;
     }
 
-    .nav-container {
+    .subNav li {
+        display: flex;
+    }
+
+    .subNav a {
+        padding-left: 20px;
+        flex: 1; /**/
+    }
+    /* subNav styles and reset for mobile view port ------------------------------------------------------------ */
+
+    /* search-container styles and reset for mobile view port -------------------------------------------------- */
+    .search-bar {
+        border: 1px solid green;
+        display: flex;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        position: relative;
+    }
+
+    .search-bar label {
+        display: flex;
+        flex: 1;
         order: 1;
     }
 
-    .logo {
-        order: 0;
-    } */
+    .search-bar input {
+        flex: 1;
+        order: 2;
+    }
 
+    #search-nav {
+        display: none;
+    }
+
+    /*#search-nav  {*/
+    /*    margin: 5px;  !* Vertically pushes the anchors to the center. *!*/
+    /*}*/
+
+    /*#search-nav ul {*/
+    /*    flex-direction: column;*/
+    /*}*/
+
+    /*#search-nav ul li {*/
+    /*    justify-content: flex-start;*/
+    /*    margin: -5px; !* ~!IMPORTANT: Not sure where else in code is affecting margin. *!*/
+    /*}*/
+
+    /*#search-nav ul li:nth-child(2) {*/
+    /*    !* Had to manually add margins to the second list item to match #top-nav anchors. *!*/
+    /*    margin-top: 5px;*/
+    /*    margin-bottom: 5px;*/
+    /*}*/
+
+    /*#search-nav ul li a {*/
+    /*    width: 100%;*/
+    /*    padding-left: 20px;*/
+    /*}*/
+
+    .subNav {
+        display: none;
+    }
+
+    .subNav ul li:nth-child(1) {
+        background-color: #E6E6FA;
+    }
+
+    .subNav ul li:nth-child(1) i {
+        align-items: center;
+        border: 1px solid red;
+        display: flex;
+        justify-content: center;
+    }
+
+
+    /* search-container styles and reset for mobile view port -------------------------------------------------- */
 }
 
 @media (min-width: 1108px) {
