@@ -79,23 +79,67 @@ const MIN_DESKTOP_WIDTH = 1107;
 // - Fixed the issue previously stated in UPDATE 4.
 // - Got the toggles and visibilities working as expected for both top-nav and subNav elements.
 // - added the .off event to prevent multiple event handlers from stacking.
-$("#top-nav a").off("click").on("click", function() {
-    let clicked = $(this);
+// NEXT:
+// - Work on separating mobile and desktop logic.
+//
+// $("#top-nav a").off("click").on("click", function() {
+//     let clicked = $(this);
+//
+//     $("#top-nav a").removeClass("active-navLink"); // Resets and removes all .active-navLinks
+//     clicked.addClass("active-navLink");
+//
+//     let index = clicked.data("index"); // Assign index of the clicked anchor.
+//     let subNav = $(".subNav");
+//
+//     subNav.removeClass("active-subNav"); // Resets and removes all .active-subNavs
+//     $(subNav[index]).addClass("active-subNav"); // Use index from above to target subNav div.
+//
+//     // I needed a way to target all other subNavs that are not active to be hidden.
+//     //
+//     // References:
+//     // 1. https://foobartel.com/articles/targeting-selectors-without-a-class-attribute
+//     // 2. https://www.geeksforgeeks.org/jquery/how-to-select-all-elements-without-a-given-class-using-jquery/
+//     $(".subNav:not(.active-subNav)").hide();
+//     $(subNav[index]).toggle();
+// });
 
-    $("#top-nav a").removeClass("active-navLink"); // Resets and removes all .active-navLinks
-    clicked.addClass("active-navLink");
+// UPDATE 6:
+//
+function bindToMobile() {
+    $("#top-nav a").off("click").on("click", function() {
+        if (window.innerWidth >= MIN_DESKTOP_WIDTH) return;
 
-    let index = clicked.data("index"); // Assign index of the clicked anchor.
-    let subNav = $(".subNav");
+        let clicked = $(this);
 
-    subNav.removeClass("active-subNav"); // Resets and removes all .active-subNavs
-    $(subNav[index]).addClass("active-subNav"); // Use index from above to target subNav div.
+        $("#top-nav a").removeClass("active-navLink"); // Resets and removes all .active-navLinks
+        clicked.addClass("active-navLink");
 
-    // I needed a way to target all other subNavs that are not active to be hidden.
-    //
-    // References:
-    // 1. https://foobartel.com/articles/targeting-selectors-without-a-class-attribute
-    // 2. https://www.geeksforgeeks.org/jquery/how-to-select-all-elements-without-a-given-class-using-jquery/
-    $(".subNav:not(.active-subNav)").hide();
-    $(subNav[index]).toggle();
-});
+        let index = clicked.data("index"); // Assign index of the clicked anchor.
+        let subNav = $(".subNav");
+
+        subNav.removeClass("active-subNav"); // Resets and removes all .active-subNavs
+        $(subNav[index]).addClass("active-subNav"); // Use index from above to target subNav div.
+
+        // I needed a way to target all other subNavs that are not active to be hidden.
+        //
+        // References:
+        // 1. https://foobartel.com/articles/targeting-selectors-without-a-class-attribute
+        // 2. https://www.geeksforgeeks.org/jquery/how-to-select-all-elements-without-a-given-class-using-jquery/
+        $(".subNav:not(.active-subNav)").hide();
+        $(subNav[index]).toggle();
+    });
+}
+
+function checkWindowSize() {
+    if (window.innerWidth < MIN_DESKTOP_WIDTH) {
+        // console.log("Mobile");
+        bindToMobile();
+    } else {
+        // console.log("Desktop");
+        $("#top-nav a").removeClass("active-navLink");
+        $(".subNav").removeClass("active-subNav").hide();
+    }
+}
+
+checkWindowSize(); // Runs once when the page loads.
+window.addEventListener("resize", checkWindowSize);
