@@ -27,6 +27,7 @@
     header {
         flex-direction: column;
         height: 100%;
+        overflow: auto;
         position: absolute;
         width: 60%;
     }

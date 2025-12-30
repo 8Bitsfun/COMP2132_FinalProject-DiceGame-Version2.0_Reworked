@@ -33,7 +33,10 @@ body {
 header {
     border: 1px solid blue;
     padding: 10px;
-    overflow: auto;
+    /* Removed overflow as it was causing unexpected behavior, where
+       .trending-searches div was hiding behind the html body,
+       - header was clipping the div.*/
+    /*overflow: auto;*/ /* Moved this to the responsive-header.css file for mobile viewport. */
     scrollbar-width: none;
 }
 
