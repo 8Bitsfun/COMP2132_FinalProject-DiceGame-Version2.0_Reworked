@@ -29,7 +29,7 @@
     left: 0;
     right: 0;
     margin: 0 auto; /* Fixed positioning avoids overlay issues seen with relative/absolute */
-    position: fixed; /* Position subNav directly below header */
+    position: absolute; /* Position subNav directly below header */
     top: 80px; /* Align width with main content */
     width: 90%;
     z-index: 99;
