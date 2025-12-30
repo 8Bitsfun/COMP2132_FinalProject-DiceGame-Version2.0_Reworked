@@ -28,7 +28,7 @@
         flex-direction: column;
         height: 100%;
         position: absolute;
-        width: 70%;
+        width: 60%;
     }
 
     /*#top-nav {*/
@@ -45,11 +45,14 @@
     }
 
     #top-nav ul li a {
+        font-size: 1em;
+        padding-left: 20px;
         width: 100%;
-        padding-left: 20px
+
     }
 
     .search-container {
+        display: none;
         /** flex: 0; */ /** No effect on cross-axis where flex-direction is column. */
     }
 
@@ -95,6 +98,23 @@
     .logo {
         order: 0;
     } */
+
+    .subNav {
+        flex-direction: column;
+        padding: 0;
+        top: 75px;
+        width: calc(100% - 20px);
+    }
+
+    .subNav a {
+        display: flex;
+        padding-left: 20px;
+    }
+
+    .column {
+        border: 2px solid green;
+    }
+
 
 }
 
