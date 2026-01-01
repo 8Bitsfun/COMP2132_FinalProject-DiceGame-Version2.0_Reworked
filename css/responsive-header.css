@@ -116,7 +116,34 @@
         border: 2px solid green;
     }
 
+    /* Does not correctly selects anchor.*/
+    /*.subNav li a:nth-child(1)::after {*/
+    /*    content: "\2192";*/
+    /*}*/
 
+    .subNav ul > li:first-child {
+        font-weight: bold;
+    }
+
+    .subNav ul > li:first-child > a {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .subNav ul > li:first-child > a::after {
+        background: url('../images/chevron-right.png') no-repeat center;
+        background-size: contain;
+        content: "";
+        height: 18px;
+        padding-right: 5px;
+        width: 18px;
+    }
+
+    .subNav ul > li:first-child > a.open::after {
+        transform: rotate(90deg); /* rotates right arrow down */
+    }
 }
 
 @media (min-width: 1108px) {
